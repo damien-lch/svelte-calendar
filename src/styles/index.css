@@ -1,0 +1,59 @@
+.calendar {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+.calendar_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.calendar_header button {
+	background-color: aquamarine;
+}
+.calendar_header button:disabled {
+	background-color: #ccc;
+}
+.calendar_content {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
+	flex: 1;
+	gap: 5px;
+}
+.calendar_content .calendar_content_weekdays {
+	grid-column: span 7;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+}
+.calendar_content .calendar_content_weekdays .calendar_content_weekdays_item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #a8a8a8;
+	font-size: 14px;
+	height: 30px;
+}
+.calendar_content .date {
+	background-color: transparent;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.calendar_content .date.disabled {
+	background-color: #f5f5f5;
+	color: black;
+	opacity: 0.5;
+	cursor: not-allowed;
+	border-radius: 5px;
+}
+.calendar_content .date.selected {
+	color: white;
+	border-radius: 5px;
+	border: 1px solid black;
+	color: black;
+}

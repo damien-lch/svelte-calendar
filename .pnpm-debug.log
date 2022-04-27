@@ -1,0 +1,250 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "svelte-calendar",
+      "version": "0.0.1",
+      "scripts": {
+        "dev": "svelte-kit dev",
+        "build": "svelte-kit build",
+        "package": "svelte-kit package",
+        "preview": "svelte-kit preview",
+        "prepare": "svelte-kit sync",
+        "check": "svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+        "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+        "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+      },
+      "devDependencies": {
+        "@sveltejs/adapter-auto": "next",
+        "@sveltejs/kit": "next",
+        "@typescript-eslint/eslint-plugin": "^5.10.1",
+        "@typescript-eslint/parser": "^5.10.1",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-svelte3": "^3.2.1",
+        "prettier": "^2.5.1",
+        "prettier-plugin-svelte": "^2.5.0",
+        "svelte": "^3.44.0",
+        "svelte-check": "^2.2.6",
+        "svelte-preprocess": "^4.10.1",
+        "tslib": "^2.3.1",
+        "typescript": "~4.6.2"
+      },
+      "type": "module"
+    },
+    "prefix": "/Users/damien/Desktop/librairies/svelte-calendar"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/damien/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/damien/Desktop/librairies/svelte-calendar/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tslib/2.4.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "tslib",
+      "rawSpec": "^2.3.1"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.4.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier/2.6.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier",
+      "rawSpec": "^2.5.1"
+    }
+  },
+  "7 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.6.2",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-prettier/8.5.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-prettier",
+      "rawSpec": "^8.3.0"
+    }
+  },
+  "9 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.5.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "10 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tslib/2.4.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "11 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.6.2",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "12 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/8.5.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "13 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte-check/2.7.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte-check",
+      "rawSpec": "^2.2.6"
+    }
+  },
+  "14 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-check/2.7.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "15 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-check/2.7.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte/3.47.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte",
+      "rawSpec": "^3.44.0"
+    }
+  },
+  "17 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte/3.47.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte/3.47.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/7.32.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "^7.32.0"
+    }
+  },
+  "20 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/7.32.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "21 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/7.32.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte-preprocess/4.10.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte-preprocess",
+      "rawSpec": "^4.10.1"
+    }
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-preprocess/4.10.6",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "24 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-preprocess/4.10.6",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "25 debug pnpm:update-check": {
+    "currentVersion": "6.32.6",
+    "latestVersion": "6.32.11"
+  },
+  "26 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-svelte3/3.4.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-svelte3",
+      "rawSpec": "^3.2.1"
+    }
+  },
+  "27 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/3.4.1",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-svelte3/3.4.1",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "29 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier-plugin-svelte/2.7.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier-plugin-svelte",
+      "rawSpec": "^2.5.0"
+    }
+  },
+  "30 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.7.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "31 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.7.0",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "found_in_store"
+  },
+  "32 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@sveltejs/kit/1.0.0-next.323",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@sveltejs/kit",
+      "rawSpec": "next"
+    }
+  },
+  "33 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@sveltejs/kit/1.0.0-next.323",
+    "requester": "/Users/damien/Desktop/librairies/svelte-calendar",
+    "status": "resolved"
+  },
+  "34 warn pnpm:install-check": {
+    "message": "Unsupported engine for registry.npmjs.org/@typescript-eslint/eslint-plugin/5.21.0: wanted: {\"node\":\"^12.22.0 || ^14.17.0 || >=16.0.0\"} (current: {\"node\":\"v15.14.0\",\"pnpm\":\"6.32.6\"})",
+    "prefix": "/Users/damien/Desktop/librairies/svelte-calendar"
+  },
+  "35 error pnpm": {
+    "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+    "packageId": "registry.npmjs.org/@typescript-eslint/eslint-plugin/5.21.0",
+    "wanted": {
+      "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    },
+    "current": {
+      "node": "v15.14.0",
+      "pnpm": "6.32.6"
+    },
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "Unsupported engine for registry.npmjs.org/@typescript-eslint/eslint-plugin/5.21.0: wanted: {\"node\":\"^12.22.0 || ^14.17.0 || >=16.0.0\"} (current: {\"node\":\"v15.14.0\",\"pnpm\":\"6.32.6\"})",
+      "code": "ERR_PNPM_UNSUPPORTED_ENGINE",
+      "stack": "pnpm: Unsupported engine for registry.npmjs.org/@typescript-eslint/eslint-plugin/5.21.0: wanted: {\"node\":\"^12.22.0 || ^14.17.0 || >=16.0.0\"} (current: {\"node\":\"v15.14.0\",\"pnpm\":\"6.32.6\"})\n    at checkEngine (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:41290:16)\n    at checkPackage (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:43386:104)\n    at packageIsInstallable (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:43356:20)\n    at resolveAndFetch (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:74519:117)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:94:5)\n    at async resolveDependency (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:116038:23)\n    at async resolveDependenciesOfDependency (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:115873:39)\n    at async Promise.all (index 2)\n    at async resolveDependencies (/Users/damien/.nvm/versions/node/v15.14.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.32.6/node_modules/pnpm/dist/pnpm.cjs:115840:29)"
+    }
+  }
+}
