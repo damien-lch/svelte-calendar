@@ -11,4 +11,4 @@
 | disabledDates      | Array of disabled dates                                | String[] | []      | False      |
 | maxSelectableDates | Maximum of date selectable in multiple mode            | Number   | 0       | False      |
 | selectedDate       | Date selected on single mode                           | String   | null    | True       |
-| selectedDates      | Array of selected dates on multiple mode               | String[] | True    | True       |
+| selectedDates      | Array of selected dates on multiple mode               | String[] | []      | True       |
