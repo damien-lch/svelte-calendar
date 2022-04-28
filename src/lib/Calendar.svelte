@@ -22,7 +22,7 @@
 	export let mode: string = 'single'; // display, single, multiple
 	export let selectedDate: null | string = null; // format: YYYY-MM-DD
 	export let selectedDates: string[] = []; // format: [YYYY-MM-DD]
-	export let maxSelectableDates = 0;
+	export let maxSelectableDates = 2;
 	export let locale = 'en';
 
 	const currentDate = new Date();
@@ -39,8 +39,8 @@
 			selectedYear--;
 		} else {
 			selectedMonth--;
-			dispatch('clickOnPrev', selectedMonth);
 		}
+		dispatch('clickOnNext', selectedMonth);
 	};
 	const nextMonth = () => {
 		if (selectedMonth === 12) {
@@ -48,8 +48,8 @@
 			selectedYear++;
 		} else {
 			selectedMonth++;
-			dispatch('clickOnNext', selectedMonth);
 		}
+		dispatch('clickOnNext', selectedMonth);
 	};
 
 	const checkGoPrev = (selectedYear: number, selectedMonth: number, minDate: string | null) => {
@@ -94,6 +94,16 @@
 				year: selectedYear,
 				date: formatedDate(new Date(selectedYear, selectedMonth - 1, i)),
 				disabled: isDateDisabled(formatedDate(new Date(selectedYear, selectedMonth - 1, i)))
+			});
+		}
+		for (let i = 1; i <= 35 - nbOfDays; i++) {
+			days.push({
+				day: i,
+				month: selectedMonth + 1,
+				year: selectedYear,
+				date: formatedDate(new Date(selectedYear, selectedMonth, i)),
+				disabled: isDateDisabled(formatedDate(new Date(selectedYear, selectedMonth, i))),
+				isNextMonth: true
 			});
 		}
 		return days;
@@ -147,21 +157,27 @@
 		}
 	};
 
+	const resetValues = () => {
+		selectedDate = null;
+		selectedDates = [];
+	};
+
 	$: canGoPrev = checkGoPrev(selectedYear, selectedMonth, minDate);
 	$: canGoNext = checkGoNext(selectedYear, selectedMonth, maxDate);
 	$: currentDays = generateDays(selectedYear, selectedMonth, minDate, maxDate);
+	$: mode, resetValues();
 </script>
 
 <div class="calendar">
 	<div class="calendar_header">
 		<button disabled={!canGoPrev} on:click={prevMonth}> prev </button>
-		{months[locale][selectedMonth - 1]}
+		{months[locale.toLowerCase()][selectedMonth - 1]}
 		{selectedYear}
 		<button disabled={!canGoNext} on:click={nextMonth}>next</button>
 	</div>
 	<div class="calendar_content">
 		<div class="calendar_content_weekdays">
-			{#each weekdays[locale] as day}
+			{#each weekdays[locale.toLowerCase()] as day}
 				<div class="calendar_content_weekdays_item">
 					<span>{day}</span>
 				</div>
@@ -169,7 +185,7 @@
 		</div>
 		{#each currentDays as day}
 			<div
-				class="date text-unselectable {day.disabled
+				class="date text-unselectable {day.isNextMonth ? 'next-month' : ''} {day.disabled
 					? 'disabled'
 					: checkIfSelected(day.date, selectedDate, selectedDates)
 					? 'selected'

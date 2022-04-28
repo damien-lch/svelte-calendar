@@ -44,6 +44,9 @@
 	align-items: center;
 	cursor: pointer;
 }
+.calendar_content .date.next-month {
+	opacity: 0.3;
+}
 .calendar_content .date.disabled {
 	background-color: #f5f5f5;
 	color: black;
