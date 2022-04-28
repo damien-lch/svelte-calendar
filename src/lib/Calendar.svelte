@@ -136,9 +136,12 @@
 		};
 	};
 
-	const checkIfSelected = (date: string, selectedDate: string, selectedDates: string[]) => {
+	const checkIfSelected = (date: string, selectedDate: null | string, selectedDates: string[]) => {
 		if (mode === 'single') {
-			return selectedDate && selectedDate === date;
+			if (selectedDate) {
+				return selectedDate && selectedDate === date;
+			}
+			return false;
 		} else {
 			return selectedDates.map((d) => d).includes(date);
 		}
@@ -168,7 +171,7 @@
 			<div
 				class="date text-unselectable {day.disabled
 					? 'disabled'
-					: selectedDate && checkIfSelected(day.date, selectedDate, selectedDates)
+					: checkIfSelected(day.date, selectedDate, selectedDates)
 					? 'selected'
 					: ''}"
 				on:click={() => !day.disabled && handleClickOnDate(day.date)}
