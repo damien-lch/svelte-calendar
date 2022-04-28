@@ -1,6 +1,21 @@
 {
-	"name": "svelte-calendar",
+	"name": "@neiwad/svelte-calendar",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/neiwad/svelte-calendar"
+	},
+	"homepage": "https://github.com/neiwad/svelte-calendar",
+	"bugs": {
+		"url": "https://github.com/neiwad/svelte-calendar/issues",
+		"email": "hello@neiwad.dev"
+	},
+	"license": "MIT",
+	"author": "neiwad <hello@neiwad.dev> (https://neiwad.dev)",
+	"keywords": [
+		"svelte",
+		"calendar"
+	],
 	"scripts": {
 		"dev": "svelte-kit dev --port 3001",
 		"build": "svelte-kit build",
@@ -25,6 +40,7 @@
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.1",
+		"svelte2tsx": "^0.5.9",
 		"tslib": "^2.3.1",
 		"typescript": "~4.6.2"
 	},
