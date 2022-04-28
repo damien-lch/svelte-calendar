@@ -24,6 +24,8 @@
 	export let selectedDates: string[] = []; // format: [YYYY-MM-DD]
 	export let maxSelectableDates = 2;
 	export let locale = 'en';
+	export let allowMonthPicker = true;
+	export let allowYearPicker = true;
 
 	const currentDate = new Date();
 	let selectedMonth = currentDate.getMonth() + 1;
@@ -169,6 +171,10 @@
 		selectedMonth = month + 1;
 		showMonthPicker = false;
 	};
+	const pickYear = (year: number) => {
+		selectedYear = year;
+		showYearPicker = false;
+	};
 
 	$: canGoPrev = checkGoPrev(selectedYear, selectedMonth, minDate);
 	$: canGoNext = checkGoNext(selectedYear, selectedMonth, maxDate);
@@ -183,14 +189,14 @@
 		<div>
 			<span
 				on:click={() => {
-					showMonthPicker = true;
+					allowMonthPicker && (showMonthPicker = true);
 				}}
 			>
 				{months[locale.toLowerCase()][selectedMonth - 1]}
 			</span>
 			<span
 				on:click={() => {
-					showYearPicker = true;
+					allowYearPicker && (showYearPicker = true);
 				}}
 			>
 				{selectedYear}
@@ -244,7 +250,10 @@
 			>
 			<div id="year_picker_years">
 				{#each pickableYears as year}
-					<div class="year_picker_item {year === selectedYear ? 'selected' : ''}">
+					<div
+						class="year_picker_item {year === selectedYear ? 'selected' : ''}"
+						on:click={() => pickYear(year)}
+					>
 						<span>{year}</span>
 					</div>
 				{/each}

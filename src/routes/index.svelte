@@ -13,7 +13,9 @@
 		minDate: null,
 		maxDate: null,
 		mode: 'single',
-		maxSelectableDates: 2
+		maxSelectableDates: 2,
+		allowMonthPicker: true,
+		allowYearPicker: true
 	};
 	let values = {
 		selectedDate: null,
@@ -24,6 +26,10 @@
 	const addEvent = (title: string, data: string = '') => {
 		events = [...events, { title, data }];
 	};
+
+	$: {
+		console.log(options);
+	}
 </script>
 
 <div class="container">
@@ -57,6 +63,14 @@
 		<div>
 			<span>Max Date</span>
 			<input type="date" bind:value={options.maxDate} />
+		</div>
+		<div>
+			<span>Allow month picker</span>
+			<input type="checkbox" bind:checked={options.allowMonthPicker} />
+		</div>
+		<div>
+			<span>Allow year picker</span>
+			<input type="checkbox" bind:checked={options.allowYearPicker} />
 		</div>
 	</div>
 	<div id="values">
