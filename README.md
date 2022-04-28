@@ -1,4 +1,5 @@
 # 🗓️ Svelte Calendar
+A simple Svelte calendar that can act as a date picker.
 # Props
 *Please note that all dates are on the **YYYY-MM-DD** format.*
 
