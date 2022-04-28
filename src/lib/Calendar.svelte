@@ -28,6 +28,9 @@
 	const currentDate = new Date();
 	let selectedMonth = currentDate.getMonth() + 1;
 	let selectedYear = currentDate.getFullYear();
+	let showMonthPicker = false;
+	let showYearPicker = false;
+	let yearIndex = 0;
 
 	const getDaysInMonth = (year: number, month: number) => {
 		return new Date(year, month, 0).getDate();
@@ -162,17 +165,37 @@
 		selectedDates = [];
 	};
 
+	const pickMonth = (month: number) => {
+		selectedMonth = month + 1;
+		showMonthPicker = false;
+	};
+
 	$: canGoPrev = checkGoPrev(selectedYear, selectedMonth, minDate);
 	$: canGoNext = checkGoNext(selectedYear, selectedMonth, maxDate);
 	$: currentDays = generateDays(selectedYear, selectedMonth, minDate, maxDate);
 	$: mode, resetValues();
+	$: pickableYears = [...Array(9).keys()].map((i) => selectedYear - 9 * -yearIndex + i - 4);
 </script>
 
 <div class="calendar">
 	<div class="calendar_header">
 		<button disabled={!canGoPrev} on:click={prevMonth}> prev </button>
-		{months[locale.toLowerCase()][selectedMonth - 1]}
-		{selectedYear}
+		<div>
+			<span
+				on:click={() => {
+					showMonthPicker = true;
+				}}
+			>
+				{months[locale.toLowerCase()][selectedMonth - 1]}
+			</span>
+			<span
+				on:click={() => {
+					showYearPicker = true;
+				}}
+			>
+				{selectedYear}
+			</span>
+		</div>
 		<button disabled={!canGoNext} on:click={nextMonth}>next</button>
 	</div>
 	<div class="calendar_content">
@@ -198,4 +221,87 @@
 			</div>
 		{/each}
 	</div>
+	{#if showMonthPicker}
+		<div id="month_picker">
+			{#each months[locale.toLowerCase()] as month, i}
+				<div
+					class="calendar_months_item {i + 1 === selectedMonth ? 'selected' : ''}"
+					on:click={() => {
+						pickMonth(i);
+					}}
+				>
+					<span>{month}</span>
+				</div>
+			{/each}
+		</div>
+	{/if}
+	{#if showYearPicker}
+		<div id="year_picker">
+			<button
+				on:click={() => {
+					yearIndex--;
+				}}>-</button
+			>
+			<div id="year_picker_years">
+				{#each pickableYears as year}
+					<div class="year_picker_item {year === selectedYear ? 'selected' : ''}">
+						<span>{year}</span>
+					</div>
+				{/each}
+			</div>
+			<button
+				on:click={() => {
+					yearIndex++;
+				}}>+</button
+			>
+		</div>
+	{/if}
 </div>
+
+<style>
+	#month_picker {
+		position: absolute;
+		top: 0;
+		background-color: white;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 5px;
+	}
+	.calendar_months_item {
+		background-color: #f5f5f5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.calendar_months_item.selected {
+		background-color: #ccc;
+	}
+	#year_picker {
+		position: absolute;
+		top: 0;
+		background-color: white;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+	#year_picker_years {
+		display: grid;
+		flex: 1;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		height: 100%;
+		gap: 5px;
+	}
+	.year_picker_item {
+		background-color: #f5f5f5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.year_picker_item.selected {
+		background-color: #ccc;
+	}
+</style>

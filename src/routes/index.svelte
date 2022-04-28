@@ -24,10 +24,6 @@
 	const addEvent = (title: string, data: string = '') => {
 		events = [...events, { title, data }];
 	};
-
-	$: {
-		console.log(events);
-	}
 </script>
 
 <div class="container">

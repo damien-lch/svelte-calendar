@@ -4,6 +4,7 @@
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
+	position: relative;
 }
 .calendar_header {
 	display: flex;
