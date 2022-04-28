@@ -32,7 +32,7 @@
 	}
 </script>
 
-<div class="container">
+<div class="container mx-auto flex">
 	<div id="options">
 		<h2>OPTIONS</h2>
 		<div>
